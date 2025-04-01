@@ -21,7 +21,7 @@ var _TableCell = _interopRequireDefault(require("@mui/material/TableCell"));
 var _Tooltip = _interopRequireDefault(require("@mui/material/Tooltip"));
 var _Typography = _interopRequireDefault(require("@mui/material/Typography"));
 var _InputAdornment = _interopRequireDefault(require("@mui/material/InputAdornment"));
-var _useTheme = _interopRequireDefault(require("@mui/material/styles/useTheme"));
+var _styles = require("@mui/material/styles");
 var _MenuItem = _interopRequireDefault(require("@mui/material/MenuItem"));
 var _Search = _interopRequireDefault(require("@mui/icons-material/Search"));
 var _tableComponents = require("./tableComponents");
@@ -32,7 +32,7 @@ function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbol
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; } // ==== IMPORT COMPONENTS ====
 function TableLoading() {
   var _ref;
-  var theme = (0, _useTheme["default"])();
+  var theme = (0, _styles.useTheme)();
   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
     id: "table-loading",
     sx: (_ref = {
@@ -66,7 +66,7 @@ function TableHeader(_ref2) {
     actions = _ref2.actions,
     onRequestSearch = _ref2.onRequestSearch,
     options = _ref2.options;
-  var theme = (0, _useTheme["default"])();
+  var theme = (0, _styles.useTheme)();
   var createSortHandler = function createSortHandler(property) {
     return function (event) {
       onRequestSort(event, property);
@@ -214,7 +214,7 @@ function MyDataTable(_ref3) {
     _useState28 = (0, _slicedToArray2["default"])(_useState27, 2),
     isExporting = _useState28[0],
     setExporting = _useState28[1];
-  var theme = (0, _useTheme["default"])();
+  var theme = (0, _styles.useTheme)();
 
   // routers
   var router = (0, _router.useRouter)();
