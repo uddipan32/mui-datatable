@@ -2,17 +2,17 @@ import React from "react";
 import MyTable from "./components/Table";
 
 export {
+  MyTableCell,
+  MyTableRow,
   MyTable,
   MyTableBadge,
   MyTableBody,
-  MyTableCell,
   MyTableCheckbox,
   MyTableContainer,
   MyTableFilterMenu,
   MyTableHead,
   MyTableIconButton,
   MyTablePagination,
-  MyTableRow,
   MyTableSortLabel,
   MyTableTextField,
   MyTableToolButton,

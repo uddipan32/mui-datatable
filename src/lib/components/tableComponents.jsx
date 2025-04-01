@@ -253,4 +253,8 @@ export {
   MyTableIconButton,
   MyTablePagination,
   MyTableFilterMenu,
+  MyTableCell,
+  MyTableRow,
+  MyTableSortLabel,
+  MyTableTextField,
 };
