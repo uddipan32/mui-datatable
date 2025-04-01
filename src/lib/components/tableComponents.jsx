@@ -20,7 +20,7 @@ import {
   Typography,
 } from "@mui/material";
 import { emphasize, styled } from "@mui/material/styles";
-import Iconify from "../../src/components/misc/Iconify";
+import Iconify from "./Iconify";
 import { useState } from "react";
 
 // ==== TABLE CONTAINER =====

@@ -8,7 +8,7 @@ exports.SearchBox = exports.MyTableTools = exports.MyTableToolButton = exports.M
 var _emotionRgba = require("emotion-rgba");
 var _material = require("@mui/material");
 var _styles = require("@mui/material/styles");
-var _Iconify = _interopRequireDefault(require("../../src/components/misc/Iconify"));
+var _Iconify = _interopRequireDefault(require("./Iconify"));
 var _react = require("react");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
