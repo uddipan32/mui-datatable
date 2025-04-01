@@ -1,40 +1,183 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Building from Source
 
-## Getting Started
-
-First, run the development server:
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/uddipan/mui-datatable.git
+cd mui-datatable
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Build the package:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Required Dependencies
 
-## Learn More
+Make sure you have these peer dependencies installed in your project:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install https://github.com/uddipan32/mui-datatable.git
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+{
+  "@emotion/react": "^11.x",
+  "@emotion/styled": "^11.x",
+  "@mui/material": "^5.x",
+  "@mui/icons-material": "^5.x",
+  "react": "^18.x",
+  "react-dom": "^18.x",
+  "moment": "^2.x",
+  "react-csv": "^2.x",
+  "mui-datatable": "github:uddipan32/mui-datatable"
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Basic Usage
 
-## Deploy on Vercel
+```jsx
+import { MyDataTable } from "mui-datatable";
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+function YourComponent() {
+  const columns = [
+    {
+      field: "name",
+      title: "Name",
+      searchable: true,
+      sorting: true,
+    },
+    {
+      field: "email",
+      title: "Email",
+      searchable: true,
+    },
+  ];
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  const data = [
+    { _id: "1", name: "John Doe", email: "john@example.com" },
+    { _id: "2", name: "Jane Smith", email: "jane@example.com" },
+  ];
+
+  return (
+    <MyDataTable
+      title="Users"
+      subtitle="Manage users"
+      columns={columns}
+      data={data}
+      options={{
+        pageSize: 50,
+        exportButton: true,
+        refreshButton: true,
+      }}
+    />
+  );
+}
+```
+
+## Props
+
+### Required Props
+
+| Prop    | Type           | Description                                     |
+| ------- | -------------- | ----------------------------------------------- |
+| columns | Array          | Column definitions                              |
+| data    | Array/Function | Data array or function for server-side fetching |
+
+### Column Definition
+
+```typescript
+{
+  field: string;          // Data field name
+  title: string;          // Column header text
+  searchable?: boolean;   // Enable search for this column
+  sorting?: boolean;      // Enable sorting
+  align?: 'left' | 'center' | 'right';
+  render?: (row: any) => ReactNode;  // Custom render function
+  export?: boolean;       // Include in CSV export
+}
+```
+
+### Options
+
+```typescript
+{
+  pageSize?: number;              // Default: 50
+  pageSizeOptions?: number[];     // Default: [50, 100, 150]
+  exportButton?: boolean;         // Enable CSV export
+  refreshButton?: boolean;        // Enable refresh button
+  rowSelection?: boolean;         // Enable row selection
+  pagination?: boolean;           // Enable pagination
+  tableContainerStyle?: object;   // Custom styles
+  tableHeaderStyle?: object;
+  rowStyle?: object;
+  cellStyle?: object;
+}
+```
+
+## Server-side Data Fetching
+
+For server-side operations, pass a function as the data prop:
+
+```jsx
+function YourComponent() {
+  const fetchData = async (params) => {
+    const { page, pageSize, orderBy, order, search, searchBy, filter } = params;
+
+    const response = await fetch(
+      "/api/data?" +
+        new URLSearchParams({
+          page,
+          pageSize,
+          // ... other params
+        })
+    );
+
+    const data = await response.json();
+    return {
+      data: data.items,
+      totalCount: data.total,
+    };
+  };
+
+  return (
+    <MyDataTable
+      columns={columns}
+      data={fetchData}
+      // ... other props
+    />
+  );
+}
+```
+
+## Development
+
+### Directory Structure
+
+```
+mui-datatable/
+├── src/
+│   └── lib/
+│       ├── components/
+│       │   └── Table.jsx
+│       └── index.js
+├── dist/           # Built files
+├── babel.config.json
+└── package.json
+```
+
+### Scripts
+
+- `npm run build` - Builds the package for production
+- `npm run dev` - Runs development server
+
+## License
+
+MIT
