@@ -4,7 +4,7 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.SearchBox = exports.MyTableTools = exports.MyTableToolButton = exports.MyTableTextField = exports.MyTableSortLabel = exports.MyTableRow = exports.MyTablePagination = exports.MyTableIconButton = exports.MyTableHead = exports.MyTableFilterMenu = exports.MyTableContainer = exports.MyTableCheckbox = exports.MyTableCell = exports.MyTableBody = exports.MyTableBadge = exports.MyTable = void 0;
+exports.SearchBox = exports.MyTableTools = exports.MyTableToolButton = exports.MyTablePagination = exports.MyTableIconButton = exports.MyTableHead = exports.MyTableFilterMenu = exports.MyTableContainer = exports.MyTableCheckbox = exports.MyTableBody = exports.MyTableBadge = exports.MyTable = void 0;
 var _emotionRgba = require("emotion-rgba");
 var _material = require("@mui/material");
 var _styles = require("@mui/material/styles");
@@ -81,17 +81,17 @@ var MyTableCheckbox = exports.MyTableCheckbox = (0, _styles.styled)(_material.Ch
     boxSizing: "border-box"
   };
 });
-var MyTableRow = exports.MyTableRow = (0, _styles.styled)(_material.TableRow)(function (_ref6) {
+var MyTableRow = (0, _styles.styled)(_material.TableRow)(function (_ref6) {
   var theme = _ref6.theme;
   return {};
 });
-var MyTableCell = exports.MyTableCell = (0, _styles.styled)(_material.TableCell)(function (_ref7) {
+var MyTableCell = (0, _styles.styled)(_material.TableCell)(function (_ref7) {
   var theme = _ref7.theme;
   return {
     padding: theme.spacing(1, 2)
   };
 });
-var MyTableSortLabel = exports.MyTableSortLabel = (0, _styles.styled)(_material.TableSortLabel)(function (_ref8) {
+var MyTableSortLabel = (0, _styles.styled)(_material.TableSortLabel)(function (_ref8) {
   var theme = _ref8.theme;
   return {
     color: theme.palette.primary.main,
@@ -100,7 +100,7 @@ var MyTableSortLabel = exports.MyTableSortLabel = (0, _styles.styled)(_material.
     }
   };
 });
-var MyTableTextField = exports.MyTableTextField = (0, _styles.styled)(_material.TextField)(function (_ref9) {
+var MyTableTextField = (0, _styles.styled)(_material.TextField)(function (_ref9) {
   var theme = _ref9.theme;
   return {
     ".MuiInputBase-root": {

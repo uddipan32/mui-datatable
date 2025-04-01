@@ -24,14 +24,14 @@ import Iconify from "./Iconify";
 import { useState } from "react";
 
 // ==== TABLE CONTAINER =====
-export const MyTableContainer = styled(TableContainer)(({ theme }) => ({
+const MyTableContainer = styled(TableContainer)(({ theme }) => ({
   //   padding: theme.spacing(2),
   borderRadius: "7.51px",
   boxShadow: `0px 1px 1px ${theme.palette.divider}`,
   transition: "background-color 0.3s",
 }));
 
-export const MyTableTools = styled(Box)(({ theme }) => ({
+const MyTableTools = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2),
   borderBottom: `1px solid ${theme.palette.divider}`,
   display: "flex",
@@ -39,7 +39,7 @@ export const MyTableTools = styled(Box)(({ theme }) => ({
   justifyContent: "space-between",
 }));
 
-export const MyTableHead = styled(TableHead)(({ theme }) => ({
+const MyTableHead = styled(TableHead)(({ theme }) => ({
   minWidth: "100%",
   backgroundColor: rgba(theme.palette.primary.main, 0.1),
   // backgroundColor: emphasize(theme.palette.action.selected, 0.7),
@@ -50,7 +50,7 @@ export const MyTableHead = styled(TableHead)(({ theme }) => ({
   },
 }));
 
-export const MyTableToolButton = styled(Button)(({ theme, variant }) => ({
+const MyTableToolButton = styled(Button)(({ theme, variant }) => ({
   minWidth: theme.spacing(10),
   textTransform: "none",
   borderRadius: "7.51px",
@@ -68,25 +68,25 @@ export const MyTableToolButton = styled(Button)(({ theme, variant }) => ({
   },
 }));
 
-export const MyTableCheckbox = styled(Checkbox)(({ theme }) => ({
+const MyTableCheckbox = styled(Checkbox)(({ theme }) => ({
   padding: theme.spacing(0),
   boxSizing: "border-box",
 }));
 
-export const MyTableRow = styled(TableRow)(({ theme }) => ({}));
+const MyTableRow = styled(TableRow)(({ theme }) => ({}));
 
-export const MyTableCell = styled(TableCell)(({ theme }) => ({
+const MyTableCell = styled(TableCell)(({ theme }) => ({
   padding: theme.spacing(1, 2),
 }));
 
-export const MyTableSortLabel = styled(TableSortLabel)(({ theme }) => ({
+const MyTableSortLabel = styled(TableSortLabel)(({ theme }) => ({
   color: theme.palette.primary.main,
   "&:hover": {
     color: theme.palette.secondary.main,
   },
 }));
 
-export const MyTableTextField = styled(TextField)(({ theme }) => ({
+const MyTableTextField = styled(TextField)(({ theme }) => ({
   ".MuiInputBase-root": {
     fontSize: "12px !important",
     paddingLeft: "10px !important",
@@ -96,15 +96,15 @@ export const MyTableTextField = styled(TextField)(({ theme }) => ({
   },
 }));
 
-export const MyTable = styled(Table)(({ theme }) => ({}));
-export const MyTableBody = styled(TableBody)(({ theme }) => ({
+const MyTable = styled(Table)(({ theme }) => ({}));
+const MyTableBody = styled(TableBody)(({ theme }) => ({
   position: "relative",
 }));
-export const MyTableIconButton = styled(IconButton)(({ theme }) => ({}));
+const MyTableIconButton = styled(IconButton)(({ theme }) => ({}));
 
-export const MyTablePagination = styled(TablePagination)(({ theme }) => ({}));
+const MyTablePagination = styled(TablePagination)(({ theme }) => ({}));
 
-export const MyTableFilterMenu = styled(Menu)(({ theme }) => ({
+const MyTableFilterMenu = styled(Menu)(({ theme }) => ({
   "& .MuiMenu-paper": {
     backgroundColor: theme.palette.background.paper,
     borderRadius: "14px",
@@ -113,7 +113,7 @@ export const MyTableFilterMenu = styled(Menu)(({ theme }) => ({
   },
 }));
 
-export const SearchBox = ({
+const SearchBox = ({
   placeholder,
   options,
   search,
@@ -232,9 +232,24 @@ export const SearchBox = ({
   );
 };
 
-export const MyTableBadge = styled(Badge)(({ theme }) => ({
+const MyTableBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     zIndex: "0 !important",
     right: "22px",
   },
 }));
+
+export {
+  MyTableContainer,
+  MyTableTools,
+  MyTableHead,
+  MyTableToolButton,
+  MyTableCheckbox,
+  MyTableBadge,
+  SearchBox,
+  MyTable,
+  MyTableBody,
+  MyTableIconButton,
+  MyTablePagination,
+  MyTableFilterMenu,
+};

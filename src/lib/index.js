@@ -1,2 +1,2 @@
 import MyTable from "./components/Table";
-export { MyTable };
+export default MyTable;

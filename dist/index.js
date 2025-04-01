@@ -3,11 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "MyTable", {
-  enumerable: true,
-  get: function get() {
-    return _Table["default"];
-  }
-});
+exports["default"] = void 0;
 var _Table = _interopRequireDefault(require("./components/Table"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var _default = exports["default"] = _Table["default"];
