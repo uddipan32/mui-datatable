@@ -4,6 +4,12 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "Iconify", {
+  enumerable: true,
+  get: function get() {
+    return _Iconify["default"];
+  }
+});
 Object.defineProperty(exports, "MyTable", {
   enumerable: true,
   get: function get() {
@@ -104,4 +110,5 @@ exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _Table = _interopRequireDefault(require("./components/Table"));
 var _tableComponents = require("./components/tableComponents");
+var _Iconify = _interopRequireDefault(require("./components/Iconify"));
 var _default = exports["default"] = _Table["default"];
