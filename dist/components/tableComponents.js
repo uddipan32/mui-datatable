@@ -1,25 +1,21 @@
 "use strict";
 
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.SearchBox = exports.MyTableTools = exports.MyTableToolButton = exports.MyTablePagination = exports.MyTableIconButton = exports.MyTableHead = exports.MyTableFilterMenu = exports.MyTableContainer = exports.MyTableCheckbox = exports.MyTableBody = exports.MyTableBadge = exports.MyTable = void 0;
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+var _react = _interopRequireWildcard(require("react"));
 var _emotionRgba = require("emotion-rgba");
 var _material = require("@mui/material");
 var _styles = require("@mui/material/styles");
 var _Iconify = _interopRequireDefault(require("./Iconify"));
-var _react = require("react");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+var _jsxRuntime = require("react/jsx-runtime");
+function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 // ==== TABLE CONTAINER =====
 var MyTableContainer = exports.MyTableContainer = (0, _styles.styled)(_material.TableContainer)(function (_ref) {
   var theme = _ref.theme;
@@ -150,98 +146,102 @@ var SearchBox = exports.SearchBox = function SearchBox(_ref15) {
     setSearchBy = _ref15.setSearchBy,
     handleRequestSearch = _ref15.handleRequestSearch;
   var _useState = (0, _react.useState)(""),
-    _useState2 = _slicedToArray(_useState, 2),
+    _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     searchFieldText = _useState2[0],
     setSearchFieldText = _useState2[1];
-  return /*#__PURE__*/React.createElement(_material.Box, {
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_material.Box, {
     sx: {
       display: "flex",
       height: "100%",
       marginRight: "12px",
       boxSizing: "border-box"
-    }
-  }, /*#__PURE__*/React.createElement(_material.Select, {
-    sx: (_ref16 = {
-      boxShadow: "none",
-      border: "none",
-      borderRight: "1px solid transparent",
-      borderTopLeftRadius: "8px",
-      borderBottomLeftRadius: "8px",
-      borderTopRightRadius: "0px",
-      borderBottomRightRadius: "0px",
-      marginRight: "-2px"
-    }, _defineProperty(_ref16, "border", "1px solid transparent !important"), _defineProperty(_ref16, "padding", "0px !important"), _defineProperty(_ref16, "& .MuiSelect-select", {
-      border: "none !important",
-      padding: "0px 12px",
-      minWidth: "50px",
-      minHeight: " 0px !important"
-    }), _defineProperty(_ref16, "&: focus", {
-      border: "none"
-    }), _defineProperty(_ref16, "&: hover", {
-      padding: "0px 12px",
-      border: "1px solid transparent !important"
-    }), _defineProperty(_ref16, "& .MuiInputBase-root", {
-      padding: "0px",
-      "&: hover": {
-        padding: "0px !important",
-        border: "1px solid red !important"
-      }
-    }), _defineProperty(_ref16, "& .MuiOutlinedInput-select", {
-      "&: hover": {
+    },
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Select, {
+      sx: (_ref16 = {
+        boxShadow: "none",
+        border: "none",
+        borderRight: "1px solid transparent",
+        borderTopLeftRadius: "8px",
+        borderBottomLeftRadius: "8px",
+        borderTopRightRadius: "0px",
+        borderBottomRightRadius: "0px",
+        marginRight: "-2px"
+      }, (0, _defineProperty2["default"])(_ref16, "border", "1px solid transparent !important"), (0, _defineProperty2["default"])(_ref16, "padding", "0px !important"), (0, _defineProperty2["default"])(_ref16, "& .MuiSelect-select", {
+        border: "none !important",
         padding: "0px 12px",
-        border: "1px solid red !important"
-      }
-    }), _ref16),
-    value: searchBy ? searchBy : options[0].field,
-    defaultValue: searchBy,
-    onChange: function onChange(e) {
-      return setSearchBy(e.target.value);
-    }
-  }, options.map(function (option, i) {
-    return /*#__PURE__*/React.createElement(_material.MenuItem, {
-      key: i,
-      value: option.field
-    }, /*#__PURE__*/React.createElement(_material.Typography, {
-      variant: "body2",
-      fontWeight: 500
-    }, option.title));
-  })), /*#__PURE__*/React.createElement(MyTableTextField, {
-    id: "search",
-    variant: "outlined",
-    size: "small",
-    placeholder: placeholder,
-    fullWidth: true,
-    InputProps: {
-      startAdornment: /*#__PURE__*/React.createElement(_material.IconButton, {
-        size: "small",
-        onClick: function onClick() {
-          handleRequestSearch(searchFieldText, searchBy ? searchBy : options[0].field);
-        }
-      }, /*#__PURE__*/React.createElement(_Iconify["default"], {
-        icon: "bx:bx-search"
-      }))
-    },
-    sx: {
-      "& .MuiInputBase-root": {
-        borderTopRightRadius: "8px",
-        borderBottomRightRadius: "8px",
-        borderTopLeftRadius: "0px",
-        borderBottomLeftRadius: "0px",
-        height: "100%",
-        border: "1px solid transparent !important",
+        minWidth: "50px",
+        minHeight: " 0px !important"
+      }), (0, _defineProperty2["default"])(_ref16, "&: focus", {
+        border: "none"
+      }), (0, _defineProperty2["default"])(_ref16, "&: hover", {
+        padding: "0px 12px",
+        border: "1px solid transparent !important"
+      }), (0, _defineProperty2["default"])(_ref16, "& .MuiInputBase-root", {
+        padding: "0px",
         "&: hover": {
-          border: "1px solid transparent !important"
-        },
-        minHeight: "none"
+          padding: "0px !important",
+          border: "1px solid red !important"
+        }
+      }), (0, _defineProperty2["default"])(_ref16, "& .MuiOutlinedInput-select", {
+        "&: hover": {
+          padding: "0px 12px",
+          border: "1px solid red !important"
+        }
+      }), _ref16),
+      value: searchBy ? searchBy : options[0].field,
+      defaultValue: searchBy,
+      onChange: function onChange(e) {
+        return setSearchBy(e.target.value);
+      },
+      children: options.map(function (option, i) {
+        return /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.MenuItem, {
+          value: option.field,
+          children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
+            variant: "body2",
+            fontWeight: 500,
+            children: option.title
+          })
+        }, i);
+      })
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)(MyTableTextField, {
+      id: "search",
+      variant: "outlined",
+      size: "small",
+      placeholder: placeholder,
+      fullWidth: true,
+      InputProps: {
+        startAdornment: /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.IconButton, {
+          size: "small",
+          onClick: function onClick() {
+            handleRequestSearch(searchFieldText, searchBy ? searchBy : options[0].field);
+          },
+          children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Iconify["default"], {
+            icon: "bx:bx-search"
+          })
+        })
+      },
+      sx: {
+        "& .MuiInputBase-root": {
+          borderTopRightRadius: "8px",
+          borderBottomRightRadius: "8px",
+          borderTopLeftRadius: "0px",
+          borderBottomLeftRadius: "0px",
+          height: "100%",
+          border: "1px solid transparent !important",
+          "&: hover": {
+            border: "1px solid transparent !important"
+          },
+          minHeight: "none"
+        }
+      },
+      onChange: function onChange(e) {
+        return setSearchFieldText(e.target.value);
+      },
+      onKeyDown: function onKeyDown(e) {
+        return e.key === "Enter" && handleRequestSearch(e.target.value, searchBy ? searchBy : options[0].field);
       }
-    },
-    onChange: function onChange(e) {
-      return setSearchFieldText(e.target.value);
-    },
-    onKeyDown: function onKeyDown(e) {
-      return e.key === "Enter" && handleRequestSearch(e.target.value, searchBy ? searchBy : options[0].field);
-    }
-  }));
+    })]
+  });
 };
 var MyTableBadge = exports.MyTableBadge = (0, _styles.styled)(_material.Badge)(function (_ref17) {
   var theme = _ref17.theme;
