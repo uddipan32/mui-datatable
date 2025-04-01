@@ -2,21 +2,22 @@ import React from "react";
 import MyTable from "./components/Table";
 
 export {
-  MyTableContainer,
-  MyTableTools,
-  MyTableHead,
-  MyTableToolButton,
-  MyTableCheckbox,
-  MyTableRow,
-  MyTableCell,
-  MyTableSortLabel,
-  MyTableBadge,
-  SearchBox,
   MyTable,
+  MyTableBadge,
   MyTableBody,
+  MyTableCell,
+  MyTableCheckbox,
+  MyTableContainer,
+  MyTableFilterMenu,
+  MyTableHead,
   MyTableIconButton,
   MyTablePagination,
-  MyTableFilterMenu,
+  MyTableRow,
+  MyTableSortLabel,
+  MyTableTextField,
+  MyTableToolButton,
+  MyTableTools,
+  SearchBox,
 } from "./components/tableComponents";
 
 export default MyTable;

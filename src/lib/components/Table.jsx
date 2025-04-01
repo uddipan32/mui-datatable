@@ -12,7 +12,7 @@ import TableCell from "@mui/material/TableCell";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import InputAdornment from "@mui/material/InputAdornment";
-import useTheme from "@mui/material/useTheme";
+import { useTheme } from "@mui/material/styles";
 import MenuItem from "@mui/material/MenuItem";
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -34,6 +34,7 @@ import {
   MyTableTools,
   SearchBox,
 } from "./tableComponents";
+
 import Iconify from "./Iconify";
 
 import { rgba } from "emotion-rgba";
@@ -69,7 +70,7 @@ function TableLoading() {
   );
 }
 
-function TableHeader({
+export function TableHeader({
   onSelectAllClick,
   order,
   orderBy,

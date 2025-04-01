@@ -76,6 +76,12 @@ Object.defineProperty(exports, "MyTableSortLabel", {
     return _tableComponents.MyTableSortLabel;
   }
 });
+Object.defineProperty(exports, "MyTableTextField", {
+  enumerable: true,
+  get: function get() {
+    return _tableComponents.MyTableTextField;
+  }
+});
 Object.defineProperty(exports, "MyTableToolButton", {
   enumerable: true,
   get: function get() {
