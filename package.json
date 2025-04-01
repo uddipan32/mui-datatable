@@ -22,7 +22,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --extensions '.ts,.tsx'",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --extensions '.ts,.tsx,.js,.jsx'",
     "start": "next start",
     "lint": "next lint"
   },
@@ -36,6 +36,7 @@
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.26.3",
     "@babel/preset-typescript": "^7.23.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
