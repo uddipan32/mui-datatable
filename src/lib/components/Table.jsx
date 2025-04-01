@@ -5,26 +5,15 @@ import { useRouter } from "next/router";
 import { useEffect, useState, useRef, use } from "react";
 
 // ==== IMPORT COMPONENTS ====
-import {
-  Box,
-  Button,
-  Select,
-  Divider,
-  Grid,
-  Paper,
-  Table,
-  TableBody,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableContainer,
-  Tooltip,
-  Typography,
-  TablePagination,
-  InputAdornment,
-  useTheme,
-  MenuItem,
-} from "@mui/material";
+import Button from "@mui/material/Button";
+import Select from "@mui/material/Select";
+import Box from "@mui/material/Box";
+import TableCell from "@mui/material/TableCell";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import InputAdornment from "@mui/material/InputAdornment";
+import useTheme from "@mui/material/useTheme";
+import MenuItem from "@mui/material/MenuItem";
 import SearchIcon from "@mui/icons-material/Search";
 
 import {

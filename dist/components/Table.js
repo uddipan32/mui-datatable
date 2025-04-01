@@ -14,7 +14,15 @@ var _reactCsv = require("react-csv");
 var _link = _interopRequireDefault(require("next/link"));
 var _router = require("next/router");
 var _react = require("react");
-var _material = require("@mui/material");
+var _Button = _interopRequireDefault(require("@mui/material/Button"));
+var _Select = _interopRequireDefault(require("@mui/material/Select"));
+var _Box = _interopRequireDefault(require("@mui/material/Box"));
+var _TableCell = _interopRequireDefault(require("@mui/material/TableCell"));
+var _Tooltip = _interopRequireDefault(require("@mui/material/Tooltip"));
+var _Typography = _interopRequireDefault(require("@mui/material/Typography"));
+var _InputAdornment = _interopRequireDefault(require("@mui/material/InputAdornment"));
+var _useTheme = _interopRequireDefault(require("@mui/material/useTheme"));
+var _MenuItem = _interopRequireDefault(require("@mui/material/MenuItem"));
 var _Search = _interopRequireDefault(require("@mui/icons-material/Search"));
 var _tableComponents = require("./tableComponents");
 var _Iconify = _interopRequireDefault(require("./Iconify"));
@@ -24,8 +32,8 @@ function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbol
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; } // ==== IMPORT COMPONENTS ====
 function TableLoading() {
   var _ref;
-  var theme = (0, _material.useTheme)();
-  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Box, {
+  var theme = (0, _useTheme["default"])();
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
     id: "table-loading",
     sx: (_ref = {
       position: "absolute",
@@ -58,7 +66,7 @@ function TableHeader(_ref2) {
     actions = _ref2.actions,
     onRequestSearch = _ref2.onRequestSearch,
     options = _ref2.options;
-  var theme = (0, _material.useTheme)();
+  var theme = (0, _useTheme["default"])();
   var createSortHandler = function createSortHandler(property) {
     return function (event) {
       onRequestSort(event, property);
@@ -96,11 +104,11 @@ function TableHeader(_ref2) {
             "aria-label": "select all"
           }
         })
-      }), actions && (actions === null || actions === void 0 ? void 0 : actions.length) > 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.TableCell, {
+      }), actions && (actions === null || actions === void 0 ? void 0 : actions.length) > 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(_TableCell["default"], {
         align: "center",
         sx: _objectSpread({}, options === null || options === void 0 || (_options$tableHeaderS3 = options.tableHeaderStyle) === null || _options$tableHeaderS3 === void 0 ? void 0 : _options$tableHeaderS3.cellStyle),
         padding: "none",
-        children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
+        children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Typography["default"], {
           variant: "body2",
           fontWeight: 600,
           children: "Actions"
@@ -118,11 +126,11 @@ function TableHeader(_ref2) {
             onClick: createSortHandler(column.field),
             sx: {},
             children: column.title
-          }) : /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
+          }) : /*#__PURE__*/(0, _jsxRuntime.jsx)(_Typography["default"], {
             variant: "body2",
             fontWeight: 600,
             children: column.title
-          }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Box, {
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
             height: 1
           })]
         }, i);
@@ -206,7 +214,7 @@ function MyDataTable(_ref3) {
     _useState28 = (0, _slicedToArray2["default"])(_useState27, 2),
     isExporting = _useState28[0],
     setExporting = _useState28[1];
-  var theme = (0, _material.useTheme)();
+  var theme = (0, _useTheme["default"])();
 
   // routers
   var router = (0, _router.useRouter)();
@@ -523,20 +531,20 @@ function MyDataTable(_ref3) {
     children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)(_tableComponents.MyTableTools, {
       id: "tools",
       sx: _objectSpread({}, options === null || options === void 0 ? void 0 : options.tableToolbarStyle),
-      children: [title && /*#__PURE__*/(0, _jsxRuntime.jsxs)(_material.Box, {
+      children: [title && /*#__PURE__*/(0, _jsxRuntime.jsxs)(_Box["default"], {
         id: "",
-        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Typography["default"], {
           variant: "h5",
           sx: _objectSpread({}, options === null || options === void 0 ? void 0 : options.titleStyle),
           children: title
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
+        }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_Typography["default"], {
           variant: "subtitle2",
           color: "GrayText",
           textOverflow: "ellipsis",
           sx: _objectSpread({}, options === null || options === void 0 ? void 0 : options.subtitleStyle),
           children: subtitle
         })]
-      }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Box, {
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
         className: "flex",
         mr: 2,
         sx: {
@@ -546,14 +554,14 @@ function MyDataTable(_ref3) {
         children: toolsLeft && toolsLeft.map(function (tool, i) {
           return tool && (tool === null || tool === void 0 ? void 0 : tool.render());
         })
-      }), /*#__PURE__*/(0, _jsxRuntime.jsxs)(_material.Box, {
+      }), /*#__PURE__*/(0, _jsxRuntime.jsxs)(_Box["default"], {
         id: "tools",
         sx: {
           display: "flex",
           flexWrap: "nowrap",
           alignItems: "center"
         },
-        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Box, {
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
           sx: (0, _defineProperty2["default"])({
             height: "100%",
             display: {
@@ -631,7 +639,7 @@ function MyDataTable(_ref3) {
           })
         })]
       })]
-    }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Box, {
+    }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
       sx: {
         overflowY: "auto",
         boxSizing: "border-box"
@@ -677,18 +685,18 @@ function MyDataTable(_ref3) {
             }));
           },
           children: [isLoading && /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
-            children: [rows.length == 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Box, {
+            children: [rows.length == 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
               height: 60
             }), /*#__PURE__*/(0, _jsxRuntime.jsx)(TableLoading, {})]
           }), !isLoading && rows.length === 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableRow, {
             sx: _objectSpread({}, options === null || options === void 0 ? void 0 : options.rowStyle),
             children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableCell, {
               colSpan: columns.length + 1,
-              children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Box, {
+              children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
                 className: "flex align-center justify-center",
                 mt: 2,
                 mb: 2,
-                children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
+                children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Typography["default"], {
                   variant: "body2",
                   color: "GrayText",
                   textAlign: "center",
@@ -742,12 +750,12 @@ function MyDataTable(_ref3) {
               }) : null, actions && actions.length > 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableCell, {
                 align: "center",
                 sx: _objectSpread({}, options === null || options === void 0 ? void 0 : options.cellStyle),
-                children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Box, {
+                children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
                   display: "flex",
                   children: actions.map(function (action, j) {
                     var actionData = typeof action === "function" ? action(row) : action;
                     if (!(actionData !== null && actionData !== void 0 && actionData.hidden)) {
-                      return /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Tooltip, {
+                      return /*#__PURE__*/(0, _jsxRuntime.jsx)(_Tooltip["default"], {
                         title: actionData.title,
                         children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableIconButton, _objectSpread(_objectSpread({
                           disabled: actionData.disabled,
@@ -824,19 +832,19 @@ function MyDataTable(_ref3) {
       sx: {
         minWidth: "300px"
       },
-      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Typography["default"], {
         variant: "h6",
         children: "Filter by"
       }), filterOptionsFormat === null || filterOptionsFormat === void 0 ? void 0 : filterOptionsFormat.map(function (option, i) {
         var _tempFilter$option$fi, _option$options, _option$type;
         return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
-          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Typography["default"], {
             variant: "body2",
             fontWeight: 500,
             mt: 1,
             mb: 1,
             children: option.label
-          }), option.type === "select" ? /*#__PURE__*/(0, _jsxRuntime.jsxs)(_material.Select, {
+          }), option.type === "select" ? /*#__PURE__*/(0, _jsxRuntime.jsxs)(_Select["default"], {
             sx: {
               width: "100%",
               padding: "10px"
@@ -856,7 +864,7 @@ function MyDataTable(_ref3) {
                 children: "All"
               })
             }), option === null || option === void 0 || (_option$options = option.options) === null || _option$options === void 0 ? void 0 : _option$options.map(function (opt) {
-              return /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.MenuItem, {
+              return /*#__PURE__*/(0, _jsxRuntime.jsx)(_MenuItem["default"], {
                 value: opt.value,
                 children: opt.label
               }, opt.value);
@@ -871,7 +879,7 @@ function MyDataTable(_ref3) {
               return e.key === "Enter" && setTempFilter(_objectSpread(_objectSpread({}, tempFilter), {}, (0, _defineProperty2["default"])({}, option.name, e.target.value)));
             },
             InputProps: {
-              startAdornment: /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.InputAdornment, {
+              startAdornment: /*#__PURE__*/(0, _jsxRuntime.jsx)(_InputAdornment["default"], {
                 position: "start",
                 children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Search["default"], {
                   sx: {
@@ -882,11 +890,11 @@ function MyDataTable(_ref3) {
             }
           })]
         });
-      }), /*#__PURE__*/(0, _jsxRuntime.jsxs)(_material.Box, {
+      }), /*#__PURE__*/(0, _jsxRuntime.jsxs)(_Box["default"], {
         className: "flex space-between",
         mt: 2,
         mb: 2,
-        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Button, {
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_Button["default"], {
           variant: "outlined",
           sx: {
             mr: 2
@@ -896,7 +904,7 @@ function MyDataTable(_ref3) {
             setTempFilter(null);
           },
           children: "Reset"
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Button, {
+        }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_Button["default"], {
           variant: "contained",
           onClick: function onClick() {
             setFilter(tempFilter);
@@ -921,7 +929,7 @@ function MyDataTable(_ref3) {
         horizontal: "right",
         vertical: "bottom"
       },
-      children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.MenuItem, {
+      children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_MenuItem["default"], {
         onClick: function onClick() {
           if (selected.length > 0) {
             var _tableRef$current;
