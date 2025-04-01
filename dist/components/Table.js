@@ -75,9 +75,9 @@ function TableHeader(_ref2) {
   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableHead, {
     id: "table-header",
     sx: _objectSpread({}, options === null || options === void 0 ? void 0 : options.tableHeaderStyle),
-    children: /*#__PURE__*/(0, _jsxRuntime.jsxs)(MyTableRow, {
+    children: /*#__PURE__*/(0, _jsxRuntime.jsxs)(_tableComponents.MyTableRow, {
       sx: _objectSpread({}, options === null || options === void 0 || (_options$tableHeaderS = options.tableHeaderStyle) === null || _options$tableHeaderS === void 0 ? void 0 : _options$tableHeaderS.rowStyle),
-      children: [(rowSelection || rowSelection == null) && selectable && /*#__PURE__*/(0, _jsxRuntime.jsx)(MyTableCell, {
+      children: [(rowSelection || rowSelection == null) && selectable && /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableCell, {
         padding: "none",
         sx: _objectSpread({}, options === null || options === void 0 || (_options$tableHeaderS2 = options.tableHeaderStyle) === null || _options$tableHeaderS2 === void 0 ? void 0 : _options$tableHeaderS2.cellStyle),
         children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableCheckbox, {
@@ -115,7 +115,7 @@ function TableHeader(_ref2) {
         })
       }), columns.map(function (column, i) {
         var _options$tableHeaderS4;
-        return /*#__PURE__*/(0, _jsxRuntime.jsxs)(MyTableCell, {
+        return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_tableComponents.MyTableCell, {
           sx: options === null || options === void 0 || (_options$tableHeaderS4 = options.tableHeaderStyle) === null || _options$tableHeaderS4 === void 0 ? void 0 : _options$tableHeaderS4.cellStyle,
           align: column.align,
           padding: column.disablePadding ? "none" : "normal",
@@ -688,9 +688,9 @@ function MyDataTable(_ref3) {
             children: [rows.length == 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
               height: 60
             }), /*#__PURE__*/(0, _jsxRuntime.jsx)(TableLoading, {})]
-          }), !isLoading && rows.length === 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(MyTableRow, {
+          }), !isLoading && rows.length === 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableRow, {
             sx: _objectSpread({}, options === null || options === void 0 ? void 0 : options.rowStyle),
-            children: /*#__PURE__*/(0, _jsxRuntime.jsx)(MyTableCell, {
+            children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableCell, {
               colSpan: columns.length + 1,
               children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
                 className: "flex align-center justify-center",
@@ -707,7 +707,7 @@ function MyDataTable(_ref3) {
           }), rows.map(function (row, index) {
             var isItemSelected = isSelected(row._id);
             var labelId = "enhanced-table-checkbox-".concat(index);
-            return /*#__PURE__*/(0, _jsxRuntime.jsxs)(MyTableRow, {
+            return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_tableComponents.MyTableRow, {
               hover: true,
               onClick: function onClick(event) {
                 onRowClick && onRowClick(event, row);
@@ -721,7 +721,7 @@ function MyDataTable(_ref3) {
               }, options === null || options === void 0 ? void 0 : options.rowStyle) : _objectSpread({
                 cursor: "default"
               }, options === null || options === void 0 ? void 0 : options.rowStyle),
-              children: [selectable && ((options === null || options === void 0 ? void 0 : options.rowSelection) == null || options !== null && options !== void 0 && options.rowSelection) ? /*#__PURE__*/(0, _jsxRuntime.jsx)(MyTableCell, {
+              children: [selectable && ((options === null || options === void 0 ? void 0 : options.rowSelection) == null || options !== null && options !== void 0 && options.rowSelection) ? /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableCell, {
                 padding: "none",
                 sx: _objectSpread({}, options === null || options === void 0 ? void 0 : options.cellStyle),
                 children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableCheckbox, {
@@ -747,7 +747,7 @@ function MyDataTable(_ref3) {
                     handleClick(event, row._id);
                   }
                 })
-              }) : null, actions && actions.length > 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(MyTableCell, {
+              }) : null, actions && actions.length > 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableCell, {
                 align: "center",
                 sx: _objectSpread({}, options === null || options === void 0 ? void 0 : options.cellStyle),
                 children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
@@ -772,7 +772,7 @@ function MyDataTable(_ref3) {
                 })
               }), columns.map(function (column, j) {
                 if (column.render) {
-                  return /*#__PURE__*/(0, _jsxRuntime.jsx)(MyTableCell, {
+                  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableCell, {
                     align: column.align,
                     sx: _objectSpread({
                       wordBreak: "break-word",
@@ -781,7 +781,7 @@ function MyDataTable(_ref3) {
                     children: column.render(row, j)
                   }, "".concat(row._id, "-b-").concat(j));
                 } else {
-                  return /*#__PURE__*/(0, _jsxRuntime.jsx)(MyTableCell, {
+                  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_tableComponents.MyTableCell, {
                     align: column.align,
                     sx: _objectSpread({}, options === null || options === void 0 ? void 0 : options.cellStyle),
                     children: row[column.field]
