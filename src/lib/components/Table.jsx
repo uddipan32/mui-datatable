@@ -183,6 +183,12 @@ function TableHeader({
   );
 }
 
+/**
+ *
+ * @param {title, subtitle, data, columns, filterOptions, options, tableRef, onRowClick, actions, tools, toolsLeft, selectable, noDataMsg, filterChangeListener} param0
+ * @returns
+ */
+
 export default function MyDataTable({
   title,
   subtitle,

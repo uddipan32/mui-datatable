@@ -138,6 +138,13 @@ function TableHeader(_ref2) {
     })
   });
 }
+
+/**
+ *
+ * @param {title, subtitle, data, columns, filterOptions, options, tableRef, onRowClick, actions, tools, toolsLeft, selectable, noDataMsg, filterChangeListener} param0
+ * @returns
+ */
+
 function MyDataTable(_ref3) {
   var _options$pageSize, _options$pageSizeOpti;
   var title = _ref3.title,
