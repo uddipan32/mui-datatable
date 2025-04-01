@@ -157,6 +157,106 @@ function YourComponent() {
 }
 ```
 
+```jsx
+import MyDataTable, { MyTableToolButton } from "mui-datatable";
+<MyDataTable
+  tableRef={tableRef}
+  title="Users"
+  columns={[
+    {
+      title: "Avatar",
+      field: "image",
+      exportValue: (rowData) => rowData.image,
+      render: (rowData) => (
+        <img
+          style={{ width: 100, maxHeight: 50 }}
+          src={rowData.image}
+          alt={rowData.name}
+        />
+      ),
+    },
+    { title: "Name", field: "name", type: "text", searchable: true },
+    {
+      title: "Email",
+      field: "email",
+      type: "text",
+      searchable: true,
+      render: (rowData) => rowData.email,
+    },
+  ]}
+  data={(query) =>
+    new Promise((resolve, reject) => {
+      getUsers(query)
+        .then((response) => response.data)
+        .then((result) => {
+          resolve({
+            data: result.data,
+            page: result.page,
+            totalCount: result.total,
+          });
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    })
+  }
+  tools={[
+    {
+      title: "Delete",
+      render: (selected) => {
+        return (
+          <MyTableToolButton
+            startIcon={<Iconify icon="fluent:delete-12-regular" />}
+            sx={{ mr: 1 }}
+            onClick={() => {
+              if (selected.length > 0) {
+                setAction("MULTIPLE-DELETE");
+                setAlertTitle("Delete Banks");
+                setAlertMessage(
+                  `Are you sure you want to delete ${
+                    selected.length == 1
+                      ? "the user"
+                      : `${selected.length} users`
+                  }  ?`
+                );
+                setSelectedData(selected);
+                setOpenAlertDialog(true);
+              } else {
+                storeHooks.handleOpenSnackBar(
+                  "Select a user to delete",
+                  "warning"
+                );
+              }
+            }}
+          >
+            Delete
+          </MyTableToolButton>
+        );
+      },
+    },
+    {
+      title: "Add",
+      render: (selected) => {
+        return (
+          <MyTableToolButton
+            startIcon={<Iconify icon="basil:add-outline" />}
+            sx={{ mr: 1 }}
+            onClick={() => setOpenDrawer(true)}
+          >
+            Add
+          </MyTableToolButton>
+        );
+      },
+    },
+  ]}
+  onRowClick={(event, rowData) => handleClickOpenDrawer(rowData)}
+  options={{
+    refreshButton: true,
+    exportButton: true,
+  }}
+/>;
+```
+
 ## Development
 
 ### Directory Structure
