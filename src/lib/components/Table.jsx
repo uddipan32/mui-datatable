@@ -17,6 +17,8 @@ import MenuItem from "@mui/material/MenuItem";
 import SearchIcon from "@mui/icons-material/Search";
 
 import {
+  MyTableCell,
+  MyTableRow,
   MyTable,
   MyTableBadge,
   MyTableBody,
@@ -68,7 +70,7 @@ function TableLoading() {
   );
 }
 
-export function TableHeader({
+function TableHeader({
   onSelectAllClick,
   order,
   orderBy,

@@ -1,5 +1,5 @@
 import React from "react";
-import MyTable from "./components/Table";
+import MyDataTable from "./components/Table";
 
 export {
   MyTableCell,
@@ -20,4 +20,6 @@ export {
   SearchBox,
 } from "./components/tableComponents";
 
-export default MyTable;
+export { default as Iconify } from "./components/Iconify";
+
+export default MyDataTable;

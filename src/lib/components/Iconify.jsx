@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
-import { Box, useTheme } from "@mui/material";
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 
 export default function Iconify({ icon, sx, width, height, ...other }) {
   const theme = useTheme();
