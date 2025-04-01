@@ -836,7 +836,7 @@ function MyDataTable(_ref3) {
             mt: 1,
             mb: 1,
             children: option.label
-          }), option.type === "select" ? /*#__PURE__*/(0, _jsxRuntime.jsxs)(Select, {
+          }), option.type === "select" ? /*#__PURE__*/(0, _jsxRuntime.jsxs)(_material.Select, {
             sx: {
               width: "100%",
               padding: "10px"
@@ -886,7 +886,7 @@ function MyDataTable(_ref3) {
         className: "flex space-between",
         mt: 2,
         mb: 2,
-        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(Button, {
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Button, {
           variant: "outlined",
           sx: {
             mr: 2
@@ -896,7 +896,7 @@ function MyDataTable(_ref3) {
             setTempFilter(null);
           },
           children: "Reset"
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)(Button, {
+        }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Button, {
           variant: "contained",
           onClick: function onClick() {
             setFilter(tempFilter);
