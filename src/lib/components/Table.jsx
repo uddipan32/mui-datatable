@@ -42,12 +42,9 @@ import {
   MyTableToolButton,
   MyTableTools,
   SearchBox,
-} from "../../../styles/mui/tableComponents";
+} from "./tableComponents";
 import Iconify from "./Iconify";
-import {
-  MyPrimarySelect,
-  PrimaryButton,
-} from "../../../styles/mui/consoleComponents";
+
 import { rgba } from "emotion-rgba";
 
 function TableLoading() {
@@ -857,7 +854,7 @@ export default function MyDataTable({
                 {option.label}
               </Typography>
               {option.type === "select" ? (
-                <MyPrimarySelect
+                <Select
                   sx={{ width: "100%", padding: "10px" }}
                   defaultValue={"all"}
                   value={tempFilter?.[option.field] ?? "all"}
@@ -877,7 +874,7 @@ export default function MyDataTable({
                       {opt.label}
                     </MenuItem>
                   ))}
-                </MyPrimarySelect>
+                </Select>
               ) : (
                 <MyTableTextField
                   size="small"
@@ -909,7 +906,7 @@ export default function MyDataTable({
         })}
 
         <Box className="flex space-between" mt={2} mb={2}>
-          <PrimaryButton
+          <Button
             variant="outlined"
             sx={{ mr: 2 }}
             onClick={() => {
@@ -918,8 +915,8 @@ export default function MyDataTable({
             }}
           >
             Reset
-          </PrimaryButton>
-          <PrimaryButton
+          </Button>
+          <Button
             variant="contained"
             onClick={() => {
               setFilter(tempFilter);
@@ -927,7 +924,7 @@ export default function MyDataTable({
             }}
           >
             Apply Filter
-          </PrimaryButton>
+          </Button>
         </Box>
       </MyTableFilterMenu>
 

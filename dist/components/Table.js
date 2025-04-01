@@ -11,9 +11,8 @@ var _router = require("next/router");
 var _react = require("react");
 var _material = require("@mui/material");
 var _Search = _interopRequireDefault(require("@mui/icons-material/Search"));
-var _tableComponents = require("../../../styles/mui/tableComponents");
+var _tableComponents = require("./tableComponents");
 var _Iconify = _interopRequireDefault(require("./Iconify"));
-var _consoleComponents = require("../../../styles/mui/consoleComponents");
 var _emotionRgba = require("emotion-rgba");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -805,7 +804,7 @@ function MyDataTable(_ref3) {
       fontWeight: 500,
       mt: 1,
       mb: 1
-    }, option.label), option.type === "select" ? /*#__PURE__*/React.createElement(_consoleComponents.MyPrimarySelect, {
+    }, option.label), option.type === "select" ? /*#__PURE__*/React.createElement(Select, {
       sx: {
         width: "100%",
         padding: "10px"
@@ -849,7 +848,7 @@ function MyDataTable(_ref3) {
     className: "flex space-between",
     mt: 2,
     mb: 2
-  }, /*#__PURE__*/React.createElement(_consoleComponents.PrimaryButton, {
+  }, /*#__PURE__*/React.createElement(Button, {
     variant: "outlined",
     sx: {
       mr: 2
@@ -858,7 +857,7 @@ function MyDataTable(_ref3) {
       setFilter(null);
       setTempFilter(null);
     }
-  }, "Reset"), /*#__PURE__*/React.createElement(_consoleComponents.PrimaryButton, {
+  }, "Reset"), /*#__PURE__*/React.createElement(Button, {
     variant: "contained",
     onClick: function onClick() {
       setFilter(tempFilter);
