@@ -8,7 +8,8 @@ exports["default"] = Iconify;
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));
 var _react = require("@iconify/react");
-var _material = require("@mui/material");
+var _Box = _interopRequireDefault(require("@mui/material/Box"));
+var _styles = require("@mui/material/styles");
 var _jsxRuntime = require("react/jsx-runtime");
 var _excluded = ["icon", "sx", "width", "height"];
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
@@ -20,8 +21,8 @@ function Iconify(_ref) {
     width = _ref.width,
     height = _ref.height,
     other = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
-  var theme = (0, _material.useTheme)();
-  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Box, _objectSpread({
+  var theme = (0, _styles.useTheme)();
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], _objectSpread({
     component: _react.Icon,
     icon: icon,
     sx: _objectSpread(_objectSpread({}, sx), {}, {
