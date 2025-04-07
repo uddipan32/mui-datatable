@@ -2,7 +2,7 @@ import moment from "moment";
 import { CSVLink } from "react-csv";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState, useRef } from "react";
+import React from "react";
 
 // ==== IMPORT COMPONENTS ====
 import Button from "@mui/material/Button";
@@ -205,23 +205,23 @@ export default function MyDataTable({
   noDataMsg,
   filterChangeListener,
 }) {
-  const csvRef = useRef();
-  const [order, setOrder] = useState("asc");
-  const [orderBy, setOrderBy] = useState("");
-  const [search, setSearch] = useState("");
-  const [searchBy, setSearchBy] = useState(null);
-  const [selected, setSelected] = useState([]);
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(options?.pageSize ?? 50);
-  const [rows, setRows] = useState([]);
-  const [totalCount, setTotalCount] = useState(0);
-  const [exportData, setExportData] = useState([]);
-  const [filter, setFilter] = useState(null);
-  const [tempFilter, setTempFilter] = useState(null);
+  const csvRef = React.useRef();
+  const [order, setOrder] = React.useState("asc");
+  const [orderBy, setOrderBy] = React.useState("");
+  const [search, setSearch] = React.useState("");
+  const [searchBy, setSearchBy] = React.useState(null);
+  const [selected, setSelected] = React.useState([]);
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(options?.pageSize ?? 50);
+  const [rows, setRows] = React.useState([]);
+  const [totalCount, setTotalCount] = React.useState(0);
+  const [exportData, setExportData] = React.useState([]);
+  const [filter, setFilter] = React.useState(null);
+  const [tempFilter, setTempFilter] = React.useState(null);
 
   // loading
-  const [isLoading, setLoading] = useState(false);
-  const [isExporting, setExporting] = useState(false);
+  const [isLoading, setLoading] = React.useState(false);
+  const [isExporting, setExporting] = React.useState(false);
 
   const theme = useTheme();
 
@@ -276,7 +276,7 @@ export default function MyDataTable({
   const isSelected = (name) => selected.indexOf(name) !== -1;
 
   // === FILTER ====
-  const [filterAnchorEl, setFilterAnchorEl] = useState(null);
+  const [filterAnchorEl, setFilterAnchorEl] = React.useState(null);
   const openFilterMenu = Boolean(filterAnchorEl);
   const handleOpenFilterMenu = (event) => {
     setFilterAnchorEl(event.currentTarget);
@@ -290,12 +290,12 @@ export default function MyDataTable({
       query: { ...router.query, filter: JSON.stringify(filter) },
     });
   };
-  useEffect(() => {
+  React.useEffect(() => {
     handleFilterChange();
   }, [filter]);
 
   // ==== EXPORT DATA ====
-  const [exportAnchorEl, setExportAnchorEl] = useState(null);
+  const [exportAnchorEl, setExportAnchorEl] = React.useState(null);
   const openExportMenu = Boolean(exportAnchorEl);
   const handleOpenExportMenu = (event) => {
     setExportAnchorEl(event.currentTarget);
@@ -384,7 +384,7 @@ export default function MyDataTable({
     return rowData;
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (exportData.length > 0) {
       csvRef.current.link.click();
     }
@@ -428,7 +428,7 @@ export default function MyDataTable({
     }
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (currentPage) setPage(parseInt(currentPage));
     if (currentFilter) {
       setFilter(JSON.parse(currentFilter));
@@ -439,7 +439,7 @@ export default function MyDataTable({
     }
   }, [currentPage, search, rowsPerPage, order, orderBy]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (router.query.filter == undefined) return;
     const filterData = JSON.parse(router.query.filter);
     // if (!filterData) return;
@@ -451,7 +451,7 @@ export default function MyDataTable({
   const filterOptionsFormat = filterOptions?.filter((option) => option);
 
   // temp filter change
-  useEffect(() => {
+  React.useEffect(() => {
     if (filterChangeListener) {
       filterChangeListener(tempFilter);
     }

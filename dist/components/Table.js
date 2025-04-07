@@ -13,7 +13,7 @@ var _moment = _interopRequireDefault(require("moment"));
 var _reactCsv = require("react-csv");
 var _link = _interopRequireDefault(require("next/link"));
 var _router = require("next/router");
-var _react = require("react");
+var _react = _interopRequireDefault(require("react"));
 var _Button = _interopRequireDefault(require("@mui/material/Button"));
 var _Select = _interopRequireDefault(require("@mui/material/Select"));
 var _Box = _interopRequireDefault(require("@mui/material/Box"));
@@ -162,65 +162,65 @@ function MyDataTable(_ref3) {
     selectable = _ref3$selectable === void 0 ? true : _ref3$selectable,
     noDataMsg = _ref3.noDataMsg,
     filterChangeListener = _ref3.filterChangeListener;
-  var csvRef = (0, _react.useRef)();
-  var _useState = (0, _react.useState)("asc"),
-    _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
-    order = _useState2[0],
-    setOrder = _useState2[1];
-  var _useState3 = (0, _react.useState)(""),
-    _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
-    orderBy = _useState4[0],
-    setOrderBy = _useState4[1];
-  var _useState5 = (0, _react.useState)(""),
-    _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
-    search = _useState6[0],
-    setSearch = _useState6[1];
-  var _useState7 = (0, _react.useState)(null),
-    _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
-    searchBy = _useState8[0],
-    setSearchBy = _useState8[1];
-  var _useState9 = (0, _react.useState)([]),
-    _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
-    selected = _useState10[0],
-    setSelected = _useState10[1];
-  var _useState11 = (0, _react.useState)(0),
-    _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
-    page = _useState12[0],
-    setPage = _useState12[1];
-  var _useState13 = (0, _react.useState)((_options$pageSize = options === null || options === void 0 ? void 0 : options.pageSize) !== null && _options$pageSize !== void 0 ? _options$pageSize : 50),
-    _useState14 = (0, _slicedToArray2["default"])(_useState13, 2),
-    rowsPerPage = _useState14[0],
-    setRowsPerPage = _useState14[1];
-  var _useState15 = (0, _react.useState)([]),
-    _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
-    rows = _useState16[0],
-    setRows = _useState16[1];
-  var _useState17 = (0, _react.useState)(0),
-    _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
-    totalCount = _useState18[0],
-    setTotalCount = _useState18[1];
-  var _useState19 = (0, _react.useState)([]),
-    _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
-    exportData = _useState20[0],
-    setExportData = _useState20[1];
-  var _useState21 = (0, _react.useState)(null),
-    _useState22 = (0, _slicedToArray2["default"])(_useState21, 2),
-    filter = _useState22[0],
-    setFilter = _useState22[1];
-  var _useState23 = (0, _react.useState)(null),
-    _useState24 = (0, _slicedToArray2["default"])(_useState23, 2),
-    tempFilter = _useState24[0],
-    setTempFilter = _useState24[1];
+  var csvRef = _react["default"].useRef();
+  var _React$useState = _react["default"].useState("asc"),
+    _React$useState2 = (0, _slicedToArray2["default"])(_React$useState, 2),
+    order = _React$useState2[0],
+    setOrder = _React$useState2[1];
+  var _React$useState3 = _react["default"].useState(""),
+    _React$useState4 = (0, _slicedToArray2["default"])(_React$useState3, 2),
+    orderBy = _React$useState4[0],
+    setOrderBy = _React$useState4[1];
+  var _React$useState5 = _react["default"].useState(""),
+    _React$useState6 = (0, _slicedToArray2["default"])(_React$useState5, 2),
+    search = _React$useState6[0],
+    setSearch = _React$useState6[1];
+  var _React$useState7 = _react["default"].useState(null),
+    _React$useState8 = (0, _slicedToArray2["default"])(_React$useState7, 2),
+    searchBy = _React$useState8[0],
+    setSearchBy = _React$useState8[1];
+  var _React$useState9 = _react["default"].useState([]),
+    _React$useState10 = (0, _slicedToArray2["default"])(_React$useState9, 2),
+    selected = _React$useState10[0],
+    setSelected = _React$useState10[1];
+  var _React$useState11 = _react["default"].useState(0),
+    _React$useState12 = (0, _slicedToArray2["default"])(_React$useState11, 2),
+    page = _React$useState12[0],
+    setPage = _React$useState12[1];
+  var _React$useState13 = _react["default"].useState((_options$pageSize = options === null || options === void 0 ? void 0 : options.pageSize) !== null && _options$pageSize !== void 0 ? _options$pageSize : 50),
+    _React$useState14 = (0, _slicedToArray2["default"])(_React$useState13, 2),
+    rowsPerPage = _React$useState14[0],
+    setRowsPerPage = _React$useState14[1];
+  var _React$useState15 = _react["default"].useState([]),
+    _React$useState16 = (0, _slicedToArray2["default"])(_React$useState15, 2),
+    rows = _React$useState16[0],
+    setRows = _React$useState16[1];
+  var _React$useState17 = _react["default"].useState(0),
+    _React$useState18 = (0, _slicedToArray2["default"])(_React$useState17, 2),
+    totalCount = _React$useState18[0],
+    setTotalCount = _React$useState18[1];
+  var _React$useState19 = _react["default"].useState([]),
+    _React$useState20 = (0, _slicedToArray2["default"])(_React$useState19, 2),
+    exportData = _React$useState20[0],
+    setExportData = _React$useState20[1];
+  var _React$useState21 = _react["default"].useState(null),
+    _React$useState22 = (0, _slicedToArray2["default"])(_React$useState21, 2),
+    filter = _React$useState22[0],
+    setFilter = _React$useState22[1];
+  var _React$useState23 = _react["default"].useState(null),
+    _React$useState24 = (0, _slicedToArray2["default"])(_React$useState23, 2),
+    tempFilter = _React$useState24[0],
+    setTempFilter = _React$useState24[1];
 
   // loading
-  var _useState25 = (0, _react.useState)(false),
-    _useState26 = (0, _slicedToArray2["default"])(_useState25, 2),
-    isLoading = _useState26[0],
-    setLoading = _useState26[1];
-  var _useState27 = (0, _react.useState)(false),
-    _useState28 = (0, _slicedToArray2["default"])(_useState27, 2),
-    isExporting = _useState28[0],
-    setExporting = _useState28[1];
+  var _React$useState25 = _react["default"].useState(false),
+    _React$useState26 = (0, _slicedToArray2["default"])(_React$useState25, 2),
+    isLoading = _React$useState26[0],
+    setLoading = _React$useState26[1];
+  var _React$useState27 = _react["default"].useState(false),
+    _React$useState28 = (0, _slicedToArray2["default"])(_React$useState27, 2),
+    isExporting = _React$useState28[0],
+    setExporting = _React$useState28[1];
   var theme = (0, _styles.useTheme)();
 
   // routers
@@ -275,10 +275,10 @@ function MyDataTable(_ref3) {
   };
 
   // === FILTER ====
-  var _useState29 = (0, _react.useState)(null),
-    _useState30 = (0, _slicedToArray2["default"])(_useState29, 2),
-    filterAnchorEl = _useState30[0],
-    setFilterAnchorEl = _useState30[1];
+  var _React$useState29 = _react["default"].useState(null),
+    _React$useState30 = (0, _slicedToArray2["default"])(_React$useState29, 2),
+    filterAnchorEl = _React$useState30[0],
+    setFilterAnchorEl = _React$useState30[1];
   var openFilterMenu = Boolean(filterAnchorEl);
   var handleOpenFilterMenu = function handleOpenFilterMenu(event) {
     setFilterAnchorEl(event.currentTarget);
@@ -293,15 +293,15 @@ function MyDataTable(_ref3) {
       })
     });
   };
-  (0, _react.useEffect)(function () {
+  _react["default"].useEffect(function () {
     handleFilterChange();
   }, [filter]);
 
   // ==== EXPORT DATA ====
-  var _useState31 = (0, _react.useState)(null),
-    _useState32 = (0, _slicedToArray2["default"])(_useState31, 2),
-    exportAnchorEl = _useState32[0],
-    setExportAnchorEl = _useState32[1];
+  var _React$useState31 = _react["default"].useState(null),
+    _React$useState32 = (0, _slicedToArray2["default"])(_React$useState31, 2),
+    exportAnchorEl = _React$useState32[0],
+    setExportAnchorEl = _React$useState32[1];
   var openExportMenu = Boolean(exportAnchorEl);
   var handleOpenExportMenu = function handleOpenExportMenu(event) {
     setExportAnchorEl(event.currentTarget);
@@ -435,7 +435,7 @@ function MyDataTable(_ref3) {
       return _ref6.apply(this, arguments);
     };
   }();
-  (0, _react.useEffect)(function () {
+  _react["default"].useEffect(function () {
     if (exportData.length > 0) {
       csvRef.current.link.click();
     }
@@ -499,7 +499,7 @@ function MyDataTable(_ref3) {
       return _ref7.apply(this, arguments);
     };
   }();
-  (0, _react.useEffect)(function () {
+  _react["default"].useEffect(function () {
     if (currentPage) setPage(parseInt(currentPage));
     if (currentFilter) {
       setFilter(JSON.parse(currentFilter));
@@ -509,7 +509,7 @@ function MyDataTable(_ref3) {
       fetchData();
     }
   }, [currentPage, search, rowsPerPage, order, orderBy]);
-  (0, _react.useEffect)(function () {
+  _react["default"].useEffect(function () {
     if (router.query.filter == undefined) return;
     var filterData = JSON.parse(router.query.filter);
     // if (!filterData) return;
@@ -523,7 +523,7 @@ function MyDataTable(_ref3) {
   });
 
   // temp filter change
-  (0, _react.useEffect)(function () {
+  _react["default"].useEffect(function () {
     if (filterChangeListener) {
       filterChangeListener(tempFilter);
     }
