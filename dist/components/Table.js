@@ -141,7 +141,7 @@ function TableHeader(_ref2) {
 
 /**
  *
- * @param {title, subtitle, data, columns, filterOptions, options, tableRef, onRowClick, actions, tools, toolsLeft, selectable, noDataMsg, filterChangeListener} param0
+ * @param {title, subtitle, data, columns, filterOptions, options, tableRef, onRowClick, actions, tools, toolsLeft, selectable, noDataMsg, filterChangeListener}
  * @returns
  */
 
