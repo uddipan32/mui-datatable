@@ -34,17 +34,16 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0, _defineProperty2["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; } // ==== IMPORT COMPONENTS ====
 function TableLoading() {
-  var _ref;
   var theme = (0, _styles.useTheme)();
   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_Box["default"], {
     id: "table-loading",
-    sx: (_ref = {
+    sx: (0, _defineProperty2["default"])((0, _defineProperty2["default"])((0, _defineProperty2["default"])((0, _defineProperty2["default"])((0, _defineProperty2["default"])({
       position: "absolute",
       zIndex: 99,
       height: "100%",
       width: "100%",
       backgroundColor: (0, _emotionRgba.rgba)(theme.palette.background["default"], 0.5)
-    }, (0, _defineProperty2["default"])(_ref, "width", "100%"), (0, _defineProperty2["default"])(_ref, "height", "100%"), (0, _defineProperty2["default"])(_ref, "display", "flex"), (0, _defineProperty2["default"])(_ref, "justifyContent", "center"), (0, _defineProperty2["default"])(_ref, "alignItems", "center"), _ref),
+    }, "width", "100%"), "height", "100%"), "display", "flex"), "justifyContent", "center"), "alignItems", "center"),
     children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_Iconify["default"], {
       icon: "svg-spinners:gooey-balls-2",
       sx: {

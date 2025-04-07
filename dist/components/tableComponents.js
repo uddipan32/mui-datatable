@@ -138,7 +138,6 @@ var MyTableFilterMenu = exports.MyTableFilterMenu = (0, _styles.styled)(_materia
   };
 });
 var SearchBox = exports.SearchBox = function SearchBox(_ref15) {
-  var _ref16;
   var placeholder = _ref15.placeholder,
     options = _ref15.options,
     search = _ref15.search,
@@ -157,7 +156,7 @@ var SearchBox = exports.SearchBox = function SearchBox(_ref15) {
       boxSizing: "border-box"
     },
     children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Select, {
-      sx: (_ref16 = {
+      sx: (0, _defineProperty2["default"])((0, _defineProperty2["default"])((0, _defineProperty2["default"])((0, _defineProperty2["default"])((0, _defineProperty2["default"])((0, _defineProperty2["default"])((0, _defineProperty2["default"])({
         boxShadow: "none",
         border: "none",
         borderRight: "1px solid transparent",
@@ -166,28 +165,28 @@ var SearchBox = exports.SearchBox = function SearchBox(_ref15) {
         borderTopRightRadius: "0px",
         borderBottomRightRadius: "0px",
         marginRight: "-2px"
-      }, (0, _defineProperty2["default"])(_ref16, "border", "1px solid transparent !important"), (0, _defineProperty2["default"])(_ref16, "padding", "0px !important"), (0, _defineProperty2["default"])(_ref16, "& .MuiSelect-select", {
+      }, "border", "1px solid transparent !important"), "padding", "0px !important"), "& .MuiSelect-select", {
         border: "none !important",
         padding: "0px 12px",
         minWidth: "50px",
         minHeight: " 0px !important"
-      }), (0, _defineProperty2["default"])(_ref16, "&: focus", {
+      }), "&: focus", {
         border: "none"
-      }), (0, _defineProperty2["default"])(_ref16, "&: hover", {
+      }), "&: hover", {
         padding: "0px 12px",
         border: "1px solid transparent !important"
-      }), (0, _defineProperty2["default"])(_ref16, "& .MuiInputBase-root", {
+      }), "& .MuiInputBase-root", {
         padding: "0px",
         "&: hover": {
           padding: "0px !important",
           border: "1px solid red !important"
         }
-      }), (0, _defineProperty2["default"])(_ref16, "& .MuiOutlinedInput-select", {
+      }), "& .MuiOutlinedInput-select", {
         "&: hover": {
           padding: "0px 12px",
           border: "1px solid red !important"
         }
-      }), _ref16),
+      }),
       value: searchBy ? searchBy : options[0].field,
       defaultValue: searchBy,
       onChange: function onChange(e) {
