@@ -1,6 +1,6 @@
 {
   "name": "mui-datatable",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A simple and flexible data table component for MUI",
   "author": "Uddipan Bhattacharyya",
   "license": "MIT",
@@ -60,5 +60,9 @@
     "eslint": "^8",
     "eslint-config-next": "13.5.6",
     "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   }
 }

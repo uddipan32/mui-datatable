@@ -2,7 +2,7 @@ import moment from "moment";
 import { CSVLink } from "react-csv";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import * as React from "react";
 
 // ==== IMPORT COMPONENTS ====
 import Button from "@mui/material/Button";
