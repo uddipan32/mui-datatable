@@ -162,7 +162,7 @@ function MyDataTable(_ref3) {
     selectable = _ref3$selectable === void 0 ? true : _ref3$selectable,
     noDataMsg = _ref3.noDataMsg,
     filterChangeListener = _ref3.filterChangeListener;
-  var csvRef = (0, _react.useRef)(null);
+  var csvRef = (0, _react.useRef)();
   var _useState = (0, _react.useState)("asc"),
     _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
     order = _useState2[0],
@@ -897,6 +897,7 @@ function MyDataTable(_ref3) {
             }
           })]
         });
+        npm;
       }), /*#__PURE__*/(0, _jsxRuntime.jsxs)(_Box["default"], {
         className: "flex space-between",
         mt: 2,

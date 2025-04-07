@@ -1,7 +1,9 @@
 import Head from "next/head";
+import { useState, useRef } from "react";
 import MyDataTable from "../dist";
 
 export default function Home() {
+  const tableRef = useRef();
   return (
     <>
       <Head>
@@ -12,6 +14,7 @@ export default function Home() {
       </Head>
       <main className={`main`}>
         <MyDataTable
+          tableRef={tableRef}
           columns={[
             {
               id: "name",
