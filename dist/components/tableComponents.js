@@ -5,7 +5,7 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.SearchBox = exports.MyTableTools = exports.MyTableToolButton = exports.MyTableTextField = exports.MyTableSortLabel = exports.MyTableRow = exports.MyTablePagination = exports.MyTableIconButton = exports.MyTableHead = exports.MyTableFilterMenu = exports.MyTableContainer = exports.MyTableCheckbox = exports.MyTableCell = exports.MyTableBody = exports.MyTableBadge = exports.MyTable = void 0;
+exports.SearchBox = exports.MyTableTools = exports.MyTableToolButton = exports.MyTableTextField = exports.MyTableSortLabel = exports.MyTableRow = exports.MyTablePrimarySelect = exports.MyTablePagination = exports.MyTableIconButton = exports.MyTableHead = exports.MyTableFilterMenu = exports.MyTableContainer = exports.MyTableCheckbox = exports.MyTableCell = exports.MyTableBody = exports.MyTableBadge = exports.MyTable = void 0;
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
@@ -248,6 +248,38 @@ var MyTableBadge = exports.MyTableBadge = (0, _styles.styled)(_material.Badge)(f
     "& .MuiBadge-badge": {
       zIndex: "0 !important",
       right: "22px"
+    }
+  };
+});
+var MyTablePrimarySelect = exports.MyTablePrimarySelect = (0, _styles.styled)(_material.Select)(function (_ref18) {
+  var theme = _ref18.theme;
+  return {
+    boxShadow: "none",
+    border: "none",
+    padding: "0px",
+    color: theme.palette.primary.main,
+    "& .MuiSelect-select": {
+      border: "none",
+      padding: "0px"
+    },
+    "&: before": {
+      border: "none !important"
+    },
+    "& .MuiInputBase-root": {
+      padding: "0px",
+      border: "none",
+      "&: hover": {
+        border: "none !important"
+      }
+    },
+    " &: after": {
+      border: "none"
+    },
+    "&: hover": {
+      border: "none"
+    },
+    "&: focus": {
+      border: "none"
     }
   };
 });

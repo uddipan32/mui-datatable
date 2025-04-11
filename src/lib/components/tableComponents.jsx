@@ -240,6 +240,36 @@ const MyTableBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
+export const MyTablePrimarySelect = styled(Select)(({ theme }) => ({
+  boxShadow: "none",
+  border: "none",
+  padding: "0px",
+  color: theme.palette.primary.main,
+  "& .MuiSelect-select": {
+    border: "none",
+    padding: "0px",
+  },
+  "&: before": {
+    border: "none !important",
+  },
+  "& .MuiInputBase-root": {
+    padding: "0px",
+    border: "none",
+    "&: hover": {
+      border: "none !important",
+    },
+  },
+  " &: after": {
+    border: "none",
+  },
+  "&: hover": {
+    border: "none",
+  },
+  "&: focus": {
+    border: "none",
+  },
+}));
+
 export {
   MyTableContainer,
   MyTableTools,

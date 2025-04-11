@@ -854,16 +854,31 @@ function MyDataTable(_ref3) {
             mb: 1,
             children: option.label
           }), option.type === "select" ? /*#__PURE__*/(0, _jsxRuntime.jsxs)(_Select["default"], {
-            sx: {
-              width: "100%",
-              padding: "10px"
-            },
+            size: "small",
             defaultValue: "all",
             value: (_tempFilter$option$fi = tempFilter === null || tempFilter === void 0 ? void 0 : tempFilter[option.field]) !== null && _tempFilter$option$fi !== void 0 ? _tempFilter$option$fi : "all",
             onChange: function onChange(e) {
               setTempFilter(_objectSpread(_objectSpread({}, tempFilter), {}, (0, _defineProperty2["default"])({}, option.field, e.target.value)));
             },
             placeholder: option.placeholder,
+            sx: {
+              width: "100%",
+              padding: "10px",
+              "& .MuiSelect-select": {
+                border: "none",
+                padding: "0px"
+              },
+              "&: before": {
+                border: "none !important"
+              },
+              "& .MuiInputBase-root": {
+                padding: "0px",
+                border: "none",
+                "&: hover": {
+                  border: "none !important"
+                }
+              }
+            },
             children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("option", {
               value: "all",
               disabled: true,

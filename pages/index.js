@@ -21,6 +21,19 @@ export default function Home() {
               title: "Name",
             },
           ]}
+          filterOptions={[
+            {
+              label: "Name",
+              field: "name",
+              type: "select",
+              options: [
+                {
+                  label: "Option 1",
+                  value: "option1",
+                },
+              ],
+            },
+          ]}
         />
       </main>
     </>

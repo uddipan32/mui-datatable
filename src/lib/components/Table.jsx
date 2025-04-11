@@ -853,7 +853,7 @@ export default function MyDataTable({
               </Typography>
               {option.type === "select" ? (
                 <Select
-                  sx={{ width: "100%", padding: "10px" }}
+                  size="small"
                   defaultValue={"all"}
                   value={tempFilter?.[option.field] ?? "all"}
                   onChange={(e) => {
@@ -863,6 +863,24 @@ export default function MyDataTable({
                     });
                   }}
                   placeholder={option.placeholder}
+                  sx={{
+                    width: "100%",
+                    padding: "10px",
+                    "& .MuiSelect-select": {
+                      border: "none",
+                      padding: "0px",
+                    },
+                    "&: before": {
+                      border: "none !important",
+                    },
+                    "& .MuiInputBase-root": {
+                      padding: "0px",
+                      border: "none",
+                      "&: hover": {
+                        border: "none !important",
+                      },
+                    },
+                  }}
                 >
                   <option value="all" disabled selected hidden>
                     <em>All</em>

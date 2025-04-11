@@ -8,7 +8,7 @@ export default function Iconify({ icon, sx, width, height, ...other }) {
     <Box
       component={Icon}
       icon={icon}
-      sx={{ ...sx, color: sx?.color ?? theme.palette.icon.main }}
+      sx={{ ...sx, color: sx?.color ?? theme.palette?.icon?.main }}
       {...other}
     />
   );
