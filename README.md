@@ -1,44 +1,13 @@
-### Building from Source
-
-1. Clone the repository:
+### Install
 
 ```bash
-git clone https://github.com/uddipan/mui-datatable.git
-cd mui-datatable
+npm install https://github.com/uddipan32/mui-datatable.git#0.1.1
 ```
 
-2. Install dependencies:
+### Import
 
-```bash
-npm install
-```
-
-3. Build the package:
-
-```bash
-npm run build
-```
-
-## Required Dependencies
-
-Make sure you have these peer dependencies installed in your project:
-
-```bash
-npm install https://github.com/uddipan32/mui-datatable.git
-```
-
-```json
-{
-  "@emotion/react": "^11.x",
-  "@emotion/styled": "^11.x",
-  "@mui/material": "^5.x",
-  "@mui/icons-material": "^5.x",
-  "react": "^18.x",
-  "react-dom": "^18.x",
-  "moment": "^2.x",
-  "react-csv": "^2.x",
-  "mui-datatable": "github:uddipan32/mui-datatable"
-}
+```jsx
+import MyDataTable from "mui-datatable";
 ```
 
 ## Basic Usage
@@ -69,11 +38,23 @@ function YourComponent() {
   return (
     <MyDataTable
       title="Users"
-      subtitle="Manage users"
+      tableRef={tableRef}
       columns={columns}
-      data={data}
+      data={() => ({ data, page: 0, totalCount: 100 })}
+      filterOptions={[
+        {
+          label: "Name",
+          field: "name",
+          type: "select",
+          options: [
+            {
+              label: "Option 1",
+              value: "option1",
+            },
+          ],
+        },
+      ]}
       options={{
-        pageSize: 50,
         exportButton: true,
         refreshButton: true,
       }}
@@ -255,6 +236,49 @@ import MyDataTable, { MyTableToolButton } from "mui-datatable";
     exportButton: true,
   }}
 />;
+```
+
+### Building from Source
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/uddipan/mui-datatable.git
+cd mui-datatable
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Build the package:
+
+```bash
+npm run build
+```
+
+## Required Dependencies
+
+Make sure you have these peer dependencies installed in your project:
+
+```bash
+npm install https://github.com/uddipan32/mui-datatable.git
+```
+
+```json
+{
+  "@emotion/react": "^11.x",
+  "@emotion/styled": "^11.x",
+  "@mui/material": "^5.x",
+  "@mui/icons-material": "^5.x",
+  "react": "^18.x",
+  "react-dom": "^18.x",
+  "moment": "^2.x",
+  "react-csv": "^2.x",
+  "mui-datatable": "github:uddipan32/mui-datatable"
+}
 ```
 
 ## Development

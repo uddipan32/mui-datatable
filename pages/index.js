@@ -4,6 +4,26 @@ import MyDataTable from "../dist";
 
 export default function Home() {
   const tableRef = useRef();
+
+  const columns = [
+    {
+      field: "name",
+      title: "Name",
+      searchable: true,
+      sorting: true,
+    },
+    {
+      field: "email",
+      title: "Email",
+      searchable: true,
+    },
+  ];
+
+  const data = [
+    { _id: "1", name: "John Doe", email: "john@example.com" },
+    { _id: "2", name: "Jane Smith", email: "jane@example.com" },
+  ];
+
   return (
     <>
       <Head>
@@ -14,13 +34,10 @@ export default function Home() {
       </Head>
       <main className={`main`}>
         <MyDataTable
+          title="Users"
           tableRef={tableRef}
-          columns={[
-            {
-              id: "name",
-              title: "Name",
-            },
-          ]}
+          columns={columns}
+          data={() => ({ data, page: 0, totalCount: 100 })}
           filterOptions={[
             {
               label: "Name",
@@ -34,6 +51,10 @@ export default function Home() {
               ],
             },
           ]}
+          options={{
+            exportButton: true,
+            refreshButton: true,
+          }}
         />
       </main>
     </>
