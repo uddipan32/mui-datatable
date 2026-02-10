@@ -15,6 +15,7 @@ var _reactCsv = require("react-csv");
 var _link = _interopRequireDefault(require("next/link"));
 var _router = require("next/router");
 var React = _interopRequireWildcard(require("react"));
+var _writeExcelFile = _interopRequireDefault(require("write-excel-file"));
 var _Button = _interopRequireDefault(require("@mui/material/Button"));
 var _Select = _interopRequireDefault(require("@mui/material/Select"));
 var _Box = _interopRequireDefault(require("@mui/material/Box"));
@@ -313,7 +314,7 @@ function MyDataTable(_ref3) {
   };
   var handleExportDataCSV = /*#__PURE__*/function () {
     var _ref4 = (0, _asyncToGenerator2["default"])(/*#__PURE__*/_regenerator["default"].mark(function _callee() {
-      var tempColumns, rowData;
+      var tempColumns, rowData, headers, schema;
       return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -332,9 +333,30 @@ function MyDataTable(_ref3) {
               });
             });
             console.log("data", rowData);
+            // Schema for write-excel-file with bold headers only (per-cell bold not supported in OSS)
+            headers = Object.keys(rowData[0] || {});
+            schema = headers.map(function (header) {
+              return {
+                column: header,
+                type: String,
+                value: function value(row) {
+                  return row[header];
+                },
+                width: 25,
+                cellStyle: function cellStyle(row, rowIndex) {
+                  return rowIndex === 0 ? {
+                    fontWeight: "bold"
+                  } : undefined;
+                }
+              };
+            });
+            (0, _writeExcelFile["default"])(rowData, {
+              schema: schema,
+              fileName: "export.xlsx"
+            });
             setExportData(rowData);
             return _context.abrupt("return", rowData);
-          case 5:
+          case 8:
           case "end":
             return _context.stop();
         }

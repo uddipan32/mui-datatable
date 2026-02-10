@@ -3,6 +3,7 @@ import { CSVLink } from "react-csv";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import * as React from "react";
+import writeXlsxFile from "write-excel-file";
 
 // ==== IMPORT COMPONENTS ====
 import Button from "@mui/material/Button";
@@ -318,6 +319,20 @@ export default function MyDataTable({
       });
     });
     console.log("data", rowData);
+    // Schema for write-excel-file with bold headers only (per-cell bold not supported in OSS)
+    const headers = Object.keys(rowData[0] || {});
+    const schema = headers.map((header) => ({
+      column: header,
+      type: String,
+      value: (row) => row[header],
+      width: 25,
+      cellStyle: (row, rowIndex) =>
+        rowIndex === 0 ? { fontWeight: "bold" } : undefined,
+    }));
+    writeXlsxFile(rowData, {
+      schema,
+      fileName: "export.xlsx",
+    });
     setExportData(rowData);
     return rowData;
   };
