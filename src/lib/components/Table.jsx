@@ -353,6 +353,21 @@ export default function MyDataTable({
         }
       });
     });
+
+    const headers = Object.keys(rowData[0] || {});
+    const schema = headers.map((header) => ({
+      column: header,
+      type: String,
+      value: (row) => row[header],
+      width: 25,
+      cellStyle: (row, rowIndex) =>
+        rowIndex === 0 ? { fontWeight: "bold" } : undefined,
+    }));
+    writeXlsxFile(rowData, {
+      schema,
+      fileName: "export.xlsx",
+    });
+
     setExporting(false);
     setExportData(rowData);
     return rowData;
@@ -393,17 +408,31 @@ export default function MyDataTable({
         }
       });
     });
+
+    const headers = Object.keys(rowData[0] || {});
+    const schema = headers.map((header) => ({
+      column: header,
+      type: String,
+      value: (row) => row[header],
+      width: 25,
+      cellStyle: (row, rowIndex) =>
+        rowIndex === 0 ? { fontWeight: "bold" } : undefined,
+    }));
+    writeXlsxFile(rowData, {
+      schema,
+      fileName: "export.xlsx",
+    });
     setExporting(false);
     setExportData(rowData);
 
     return rowData;
   };
 
-  React.useEffect(() => {
-    if (exportData.length > 0) {
-      csvRef.current.link.click();
-    }
-  }, [exportData]);
+  // React.useEffect(() => {
+  //   if (exportData.length > 0) {
+  //     csvRef.current.link.click();
+  //   }
+  // }, [exportData]);
 
   // =======
 

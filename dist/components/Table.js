@@ -368,7 +368,7 @@ function MyDataTable(_ref3) {
   }();
   var handleExportSelectedDataCSV = /*#__PURE__*/function () {
     var _ref5 = (0, _asyncToGenerator2["default"])(/*#__PURE__*/_regenerator["default"].mark(function _callee2() {
-      var tempColumns, selectedData, rowData;
+      var tempColumns, selectedData, rowData, headers, schema;
       return _regenerator["default"].wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
@@ -390,10 +390,30 @@ function MyDataTable(_ref3) {
                 }
               });
             });
+            headers = Object.keys(rowData[0] || {});
+            schema = headers.map(function (header) {
+              return {
+                column: header,
+                type: String,
+                value: function value(row) {
+                  return row[header];
+                },
+                width: 25,
+                cellStyle: function cellStyle(row, rowIndex) {
+                  return rowIndex === 0 ? {
+                    fontWeight: "bold"
+                  } : undefined;
+                }
+              };
+            });
+            (0, _writeExcelFile["default"])(rowData, {
+              schema: schema,
+              fileName: "export.xlsx"
+            });
             setExporting(false);
             setExportData(rowData);
             return _context2.abrupt("return", rowData);
-          case 7:
+          case 10:
           case "end":
             return _context2.stop();
         }
@@ -405,7 +425,7 @@ function MyDataTable(_ref3) {
   }();
   var handleExportAllDataCSV = /*#__PURE__*/function () {
     var _ref6 = (0, _asyncToGenerator2["default"])(/*#__PURE__*/_regenerator["default"].mark(function _callee3() {
-      var response, tempColumns, rowData;
+      var response, tempColumns, rowData, headers, schema;
       return _regenerator["default"].wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
@@ -446,10 +466,30 @@ function MyDataTable(_ref3) {
                 }
               });
             });
+            headers = Object.keys(rowData[0] || {});
+            schema = headers.map(function (header) {
+              return {
+                column: header,
+                type: String,
+                value: function value(row) {
+                  return row[header];
+                },
+                width: 25,
+                cellStyle: function cellStyle(row, rowIndex) {
+                  return rowIndex === 0 ? {
+                    fontWeight: "bold"
+                  } : undefined;
+                }
+              };
+            });
+            (0, _writeExcelFile["default"])(rowData, {
+              schema: schema,
+              fileName: "export.xlsx"
+            });
             setExporting(false);
             setExportData(rowData);
             return _context3.abrupt("return", rowData);
-          case 10:
+          case 13:
           case "end":
             return _context3.stop();
         }
@@ -459,11 +499,12 @@ function MyDataTable(_ref3) {
       return _ref6.apply(this, arguments);
     };
   }();
-  React.useEffect(function () {
-    if (exportData.length > 0) {
-      csvRef.current.link.click();
-    }
-  }, [exportData]);
+
+  // React.useEffect(() => {
+  //   if (exportData.length > 0) {
+  //     csvRef.current.link.click();
+  //   }
+  // }, [exportData]);
 
   // =======
 
