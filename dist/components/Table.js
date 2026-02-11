@@ -438,7 +438,8 @@ function MyDataTable(_ref3) {
               orderBy: orderBy,
               order: order,
               search: search,
-              searchBy: searchBy
+              searchBy: searchBy,
+              filter: filter
             });
           case 4:
             response = _context3.sent;

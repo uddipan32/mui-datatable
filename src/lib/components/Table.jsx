@@ -382,6 +382,7 @@ export default function MyDataTable({
       order: order,
       search: search,
       searchBy: searchBy,
+      filter: filter,
     });
 
     const tempColumns = columns.filter((column) => column.export != false);
