@@ -310,11 +310,11 @@ export default function MyDataTable({
     const rowData = rows.map((row) => {
       return tempColumns.map((column) => {
         if (column.exportValue) {
-          return column.exportValue(row);
+          return column.exportValue(row).toString() || "";
         } else if (column.render) {
-          return column.render(row);
+          return column.render(row).toString() || "";
         } else {
-          return row[column.field];
+          return row[column.field].toString() || "";
         }
       });
     });
@@ -345,11 +345,11 @@ export default function MyDataTable({
     const rowData = selectedData.map((row) => {
       return tempColumns.map((column) => {
         if (column.exportValue) {
-          return column.exportValue(row);
+          return column.exportValue(row)?.toString() || "";
         } else if (column.render) {
-          return column.render(row);
+          return column.render(row)?.toString() || "";
         } else {
-          return row[column.field];
+          return row[column.field]?.toString() || "";
         }
       });
     });
@@ -401,11 +401,11 @@ export default function MyDataTable({
     const rowData = response.data.map((row) => {
       return tempColumns.map((column) => {
         if (column.exportValue) {
-          return column.exportValue(row);
+          return column.exportValue(row)?.toString() || "";
         } else if (column.render) {
-          return column.render(row);
+          return column.render(row)?.toString() || "";
         } else {
-          return row[column.field];
+          return row[column.field]?.toString() || "";
         }
       });
     });

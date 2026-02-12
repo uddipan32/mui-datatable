@@ -324,11 +324,11 @@ function MyDataTable(_ref3) {
             rowData = rows.map(function (row) {
               return tempColumns.map(function (column) {
                 if (column.exportValue) {
-                  return column.exportValue(row);
+                  return column.exportValue(row).toString() || "";
                 } else if (column.render) {
-                  return column.render(row);
+                  return column.render(row).toString() || "";
                 } else {
-                  return row[column.field];
+                  return row[column.field].toString() || "";
                 }
               });
             });
@@ -382,11 +382,14 @@ function MyDataTable(_ref3) {
             rowData = selectedData.map(function (row) {
               return tempColumns.map(function (column) {
                 if (column.exportValue) {
-                  return column.exportValue(row);
+                  var _column$exportValue;
+                  return ((_column$exportValue = column.exportValue(row)) === null || _column$exportValue === void 0 ? void 0 : _column$exportValue.toString()) || "";
                 } else if (column.render) {
-                  return column.render(row);
+                  var _column$render;
+                  return ((_column$render = column.render(row)) === null || _column$render === void 0 ? void 0 : _column$render.toString()) || "";
                 } else {
-                  return row[column.field];
+                  var _row$column$field;
+                  return ((_row$column$field = row[column.field]) === null || _row$column$field === void 0 ? void 0 : _row$column$field.toString()) || "";
                 }
               });
             });
@@ -459,11 +462,14 @@ function MyDataTable(_ref3) {
             rowData = response.data.map(function (row) {
               return tempColumns.map(function (column) {
                 if (column.exportValue) {
-                  return column.exportValue(row);
+                  var _column$exportValue2;
+                  return ((_column$exportValue2 = column.exportValue(row)) === null || _column$exportValue2 === void 0 ? void 0 : _column$exportValue2.toString()) || "";
                 } else if (column.render) {
-                  return column.render(row);
+                  var _column$render2;
+                  return ((_column$render2 = column.render(row)) === null || _column$render2 === void 0 ? void 0 : _column$render2.toString()) || "";
                 } else {
-                  return row[column.field];
+                  var _row$column$field2;
+                  return ((_row$column$field2 = row[column.field]) === null || _row$column$field2 === void 0 ? void 0 : _row$column$field2.toString()) || "";
                 }
               });
             });
